@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  background-color: #cce7ff;
+  font-family: Arial, sans-serif;
+}
+
+#game {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background-color: #a3d977;
+  margin: 40px auto;
+  border: 3px solid #444;
+  overflow: hidden;
+}
+
+#basket {
+  position: absolute;
+  bottom: 10px;
+  width: 100px;
+  height: 30px;
+  background-color: #964B00;
+  left: 250px;
+}
+
+#apple {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+  left: 200px;
+}
+
+#score {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
