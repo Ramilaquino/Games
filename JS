@@ -1,0 +1,36 @@
+const basket = document.getElementById('basket');
+const apple = document.getElementById('apple');
+const scoreText = document.getElementById('score');
+let basketX = 250;
+let appleY = 0;
+let appleX = Math.floor(Math.random() * 570);
+let score = 0;
+
+// Move basket
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft' && basketX > 0) {
+    basketX -= 20;
+  } else if (e.key === 'ArrowRight' && basketX < 500) {
+    basketX += 20;
+  }
+  basket.style.left = basketX + 'px';
+});
+
+// Drop apple
+function dropApple() {
+  appleY += 5;
+  if (appleY > 370) {
+    // Check for catch
+    if (appleX > basketX && appleX < basketX + 100) {
+      score++;
+      scoreText.textContent = 'Score: ' + score;
+    }
+    // Reset apple
+    appleY = 0;
+    appleX = Math.floor(Math.random() * 570);
+  }
+  apple.style.top = appleY + 'px';
+  apple.style.left = appleX + 'px';
+}
+
+setInterval(dropApple, 50);
